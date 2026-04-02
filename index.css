@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-portal-navy: #003366;
+  --color-portal-saffron: #FF9933;
+  --color-portal-emerald: #138808;
+  --color-portal-rose: #f43f5e;
+  --color-portal-indigo: #6366f1;
+  --color-portal-heritage: #8B4513;
+}
+
+@layer base {
+  body {
+    @apply bg-[#fdf8f2] text-[#2c3e50] font-sans selection:bg-portal-saffron/30;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%238b4513' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-portal-navy;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl overflow-hidden transition-all duration-300;
+}
+
+.glass-card:hover {
+  @apply shadow-[0_20px_50px_rgba(0,0,0,0.08)] -translate-y-1;
+}
+
+.portal-header {
+  @apply bg-portal-navy text-white border-b border-white/10 shadow-xl;
+}
+
+.portal-nav-item {
+  @apply text-sm font-medium px-5 py-2.5 rounded-xl transition-all duration-300 relative overflow-hidden;
+}
+
+.portal-nav-item.active {
+  @apply bg-portal-saffron text-portal-navy shadow-[0_4px_20px_rgba(245,158,11,0.3)] font-bold;
+}
+
+.portal-nav-item.inactive {
+  @apply text-slate-400 hover:text-white hover:bg-white/5;
+}
+
+.service-card {
+  @apply bg-white border border-slate-100 shadow-sm rounded-3xl overflow-hidden hover:shadow-2xl hover:border-portal-navy/10 transition-all duration-500;
+}
+
+.impact-badge {
+  @apply bg-emerald-50 text-emerald-700 border border-emerald-100 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-portal-navy to-portal-indigo;
+}
+
+.saffron-gradient {
+  @apply bg-gradient-to-br from-portal-saffron to-amber-600;
+}
+
+.navy-gradient {
+  @apply bg-gradient-to-br from-portal-navy to-slate-800;
+}
+
+.emerald-gradient {
+  @apply bg-gradient-to-br from-portal-emerald to-teal-600;
+}
+
